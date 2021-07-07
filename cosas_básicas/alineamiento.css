@@ -1,0 +1,23 @@
+/* Alinear elementos de los elementos hijos a partir de los elementos contenedores */
+/* Tenemos dos grupos: justify-items, align-items, place-items /// justify-content, align-content, place-content */
+/* Justify sirve para el inline axis o row axis y align para el block axis o column axis */
+
+/* justify-items, align-items, place-items --> Este grupo (items) sirve para alinear lo que está por dentro de la grid */
+/* Propiedades */
+.container {
+    display: grid;
+    grid-template: repeat(5, 20px) / repeat(5, 20px); /*Hay que dejar un espacio a los dos lados del slash */
+    justify-items: start | end | center | stretch;
+    align-items: start | end | center | stretch;
+    place-items: <align-items> / <justify-items>; /* sirve para usar las dos anteriores en una sola */ /*Hay que dejar un espacio a los dos lados del slash */
+}
+
+/* justify-content, align-content, place-content --> Este grupo sirve para alinear la grid en su contenedor */
+/* Propiedades */
+.container {
+    display: grid;
+    grid-template: repeat(5, 20px) / repeat(5, 20px); /*Hay que dejar un espacio a los dos lados del slash */
+    justify-content;: start | end | center | stretch | space-around | space-between | space-evenly;
+    align-content: start | end | center | stretch  | space-around | space-between | space-evenly;
+    place-content: <align-content> / <justify-content>;
+}

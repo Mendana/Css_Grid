@@ -1,0 +1,57 @@
+/* line, track, area, cell */
+    /*Row axis es lo mismo que inline axis y es el horizontal/*
+    /*Column axis es lo mismo que block axis y es el vertical*/
+
+    
+
+/* Gutters, Grid axis, Grid row, Grid column, Grid Axis */
+
+
+/* Crear filas y columnas */
+
+.container {
+    display: grid;
+    grid-template-columns: 20px 20px 20px 20px 20px;
+    grid-template-rows: 20px 20px 20px 20px 20px;
+}
+/* Aquí hemos creado 5 filas y 5 columnas donde cada casilla tiene 20*20px de tamaño */
+/* Si queremos abreviar esto sería de las dos siguientes formas */
+/*1*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 20px);
+    grid-template-rows: repeat(5, 20px);
+}
+/*2*/
+.container {
+    display: grid;
+    grid-template: repeat(5, 20px) / repeat(5,20px); /* La priemra parte define las row y la segunda las columns */
+}                                                  /*Hay que dejar un espacio a los dos lados del slash */
+
+
+/* Para añadir espacios entre las casillas hay que añadir el gap */
+.container {
+    display: grid;
+    grid-template: repeat(5, 20px) / repeat(5,20px); /*Hay que dejar un espacio a los dos lados del slash */
+    column-gap: 5px; /*También se puede poner grid-column-gap*/
+    row-gap: 5px; /*También se puede poner grid-row-gap*/
+}
+/* Y la forma abreviada sería */
+.container {
+    display: grid;
+    grid-template: repeat(5, 20px) / repeat(5,20px); /*Hay que dejar un espacio a los dos lados del slash */
+    gap: 5px 5px; /* La priemra parte define las row y la segunda las columns */ /* También se puede usar grid-gap */
+}
+
+
+/* Para crear areas se hace de la siguiente manera */
+.container {
+    display: grid;
+    grid-template: repeat(5, 20px) / repeat(5,20px); /*Hay que dejar un espacio a los dos lados del slash */
+    grid-template-areas: 
+    "header header header header  header"
+    "header header header header  header"
+    "main   main   .      sidebar sidebar"
+    "main   main   .      sidebar sidebar"
+    "footer footer footer footer  footer";
+}
