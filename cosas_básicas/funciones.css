@@ -1,0 +1,25 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Divide la grid en tantas fr (fracciones) coloquemos, es responsive ya que divide fraciones de los píxeles totales de la pantalla */
+    grid-template-columns: repeat(3, 1fr); /*Lo mismo solo que con repeat */
+}
+
+/* Como esto es responsive puede que nos de problemas al crecer o disminuir el tamaño por lo que hay lo siguiente */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 300px)); /* Aquí decimos el valor mínimo y luego el máximo que va a tener en las columnas de la siguiente manera: minmax(min, max)*/
+}
+
+
+/* Para diseño responsive tenemos lo siguiente */ 
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20px, 1fr)); /* Esparce las casillas en el máximo tamaño posible de la pantalla */
+    grid-template-columns: repeat(auto-fill, minmax(20px, 1fr)); /* Crea las casillas que decimos que hay y el espacio sobrante lo dedica para crear más columnas por si se usaran */
+}
+
+/* Para que la grid solo coja lo que ocupa el container se usa el: */
+.container {
+    display: grid;
+    grid-template-columns: auto fit-content(800px) auto;
+}
